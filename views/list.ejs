@@ -1,0 +1,27 @@
+<%- include('header'); -%>
+
+
+
+<% if(listTitle === "Satuday" || listTitle === "Sunday"){%>
+  <div class="box" id="heading"><h1>It's <%= listTitle %> ! </h1></div>
+   <%  }else{%>
+    <div class="box" id="heading"><h1>It's <%= listTitle %> ! </h1></div>    
+   <%}%>
+ 
+   <div class="box">
+       <% for(let i=1; i< listnew.length ;i++) {%>
+        <div class="item"> 
+        <input type="checkbox" name="newItem">
+         <p><%=listnew[i]%></p>
+        </div> 
+        
+       <%}%>
+   
+       
+
+   <form action="/" method="POST">
+       <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+       <button type="submit" name="list" value=<%= listTitle %>>+</button>
+   </form>
+
+   <%- include('footer'); -%>
